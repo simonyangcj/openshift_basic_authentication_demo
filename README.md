@@ -1,7 +1,7 @@
 #openshift base authentication demo 
 
 ----
-a demo project from those of you want to implement openshift basic authentication
+a demo project for those of you want to implement openshift basic authentication
 ----
 
 
@@ -28,7 +28,7 @@ how to play
           keyFile: /etc/origin/master/admin.key
     ```
 * Normally you will run you cluster with container so ensure you mapping ``credential`` folder to ``/etc/origin/master`` or just copy the ``ca.crt`` , ``admin.crt`` , ``admin.key`` to the mapping folder
-* We you copy those file remember to rename ``credential/ca.crt`` to ``delegate_ca.crt`` because the mapping folder may contains cluster ca certs
+* When you copy those file remember to rename ``credential/ca.crt`` to ``delegate_ca.crt`` because the mapping folder may contains cluster ca certs
 * Build it with command ``go build .``
 * Run ``./openshift_basic_authentication_demo`` to start server 
 * The server is liscening on the port 9443. Feel free to modify it.
