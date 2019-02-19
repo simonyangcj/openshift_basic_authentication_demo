@@ -1,0 +1,112 @@
+---
+swagger: "2.0"
+info:
+  description: "This is an api service for openshift to login with basic authentication"
+  version: "1.0.0"
+  title: "login delegation"
+  contact:
+    email: "yang.chenjun@99cloud.net"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "virtserver.swaggerhub.com"
+basePath: "/99cloud/authentication_service/1.0.0"
+tags:
+- name: "admins"
+  description: "Secured Admin-only calls"
+- name: "developers"
+  description: "Operations available to regular developers"
+schemes:
+- "https"
+paths:
+  /login:
+    post:
+      tags:
+      - "admins"
+      summary: "login"
+      description: "delegate login"
+      operationId: "login"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "user"
+        description: "user name is sent to this service"
+        required: false
+        schema:
+          $ref: "#/definitions/User"
+        x-exportParamName: "User"
+      responses:
+        200:
+          description: "A user object"
+          schema:
+            $ref: "#/definitions/User"
+        401:
+          description: "Authentication Failed"
+          schema:
+            type: "object"
+            properties:
+              error:
+                type: "string"
+                format: "uuid"
+                description: "Authentication failed"
+        403:
+          description: "Internal error"
+          schema:
+            type: "object"
+            properties:
+              error:
+                type: "string"
+                format: "uuid"
+                description: "Internal error"
+definitions:
+  User:
+    type: "object"
+    required:
+    - "password"
+    - "username"
+    properties:
+      id:
+        type: "string"
+        format: "uuid"
+        example: "d290f1ee-6c54-4b01-90e6-d701748f0851"
+      username:
+        type: "string"
+        example: "john"
+      password:
+        type: "string"
+        example: "john"
+      email:
+        type: "string"
+        example: "somebody@gmail.com"
+      sub:
+        type: "string"
+        example: "d290f1ee-6c54-4b01-90e6-d701748f0851"
+      name:
+        type: "string"
+        example: "john"
+      preferred_username:
+        type: "string"
+        example: "somebody"
+    example:
+      sub: "d290f1ee-6c54-4b01-90e6-d701748f0851"
+      password: "john"
+      name: "john"
+      id: "d290f1ee-6c54-4b01-90e6-d701748f0851"
+      preferred_username: "somebody"
+      email: "somebody@gmail.com"
+      username: "john"
+  inline_response_401:
+    properties:
+      error:
+        type: "string"
+        format: "uuid"
+        description: "Authentication failed"
+  inline_response_403:
+    properties:
+      error:
+        type: "string"
+        format: "uuid"
+        description: "Internal error"
