@@ -1,0 +1,12 @@
+{
+	"ImportPath": "github.com/simonyangcj/openshift_basic_authentication_demo",
+	"GoVersion": "go1.11",
+	"GodepVersion": "v80",
+	"Deps": [
+		{
+			"ImportPath": "github.com/gorilla/mux",
+			"Comment": "v1.7.0-1-g8559a4f",
+			"Rev": "8559a4f775fc329165fe32bd4c2543de8ada8fce"
+		}
+	]
+}
