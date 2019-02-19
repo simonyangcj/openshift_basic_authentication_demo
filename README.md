@@ -31,13 +31,11 @@ how to play
 * When you copy those file remember to rename ``credential/ca.crt`` to ``delegate_ca.crt`` because the mapping folder may contains cluster ca certs
 * Build it with command ``go build .``
 * Run ``./openshift_basic_authentication_demo`` to start server 
-* The server is liscening on the port 9443. Feel free to modify it.
+* The server is listening on the port ``9443`` . Feel free to modify it.
 * Once you done all above steps. Open you browser and visit openshift web-console and login with username ``simon`` and password ``123456``
 
 
 ----
 
-[Simon Yang]
 
 [authentication]: https://docs.openshift.com/enterprise/3.0/admin_guide/configuring_authentication.html#BasicAuthPasswordIdentityProvider
-[Simon Yang]: simonycj@gmail.com
