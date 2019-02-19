@@ -10,7 +10,7 @@ how to play
 
 ----
 
-* You can install is with command ``go get -d github.com/simonyangcj/openshift_basic_authentication_demo``
+* You can install it with command ``go get -d github.com/simonyangcj/openshift_basic_authentication_demo``
 * First you should know how openshift working with different [authentication] method
 * Then you should run you openshift-kube-apiserver with ``master-config.yaml`` with base authentication enabled. It looks like below:
     ```
