@@ -1,7 +1,7 @@
 #openshift base authentication demo 
 
 ----
-a demo project for those of you want to implement openshift basic authentication
+A demo project for those of you want to implement openshift basic authentication
 ----
 
 
